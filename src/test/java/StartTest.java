@@ -2,9 +2,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 import java.util.List;
 
@@ -13,7 +11,7 @@ public class StartTest {
     WebDriver wd;
 
 
-    @BeforeTest
+    @BeforeMethod
     public void precondition() {
         wd = new ChromeDriver();
         wd.get("https://telranedu.web.app/home");
@@ -41,9 +39,8 @@ public class StartTest {
         wd.findElement(By.cssSelector("[href*= '/om']"));// найти по середним  буквам
 
     }
-        @AfterTest
-        public void tearDown () {
-
+        @AfterMethod
+        public void tearDown() {
             wd.quit();
 
 

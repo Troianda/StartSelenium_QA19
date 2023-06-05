@@ -1,5 +1,8 @@
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 import org.testng.annotations.*;
 
 public class TableTest {
@@ -11,7 +14,10 @@ public class TableTest {
     }
     @Test
     public void testCss() {
-
+        WebElement germany = wd.findElement(By.cssSelector("#customers tr:nth-child(7) td:last-child"));
+        String text = germany.getText();
+        System.out.println(text);
+        Assert.assertEquals(text, "Germany");
     }
     @AfterMethod
     public void tearDown() {
