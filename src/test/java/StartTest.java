@@ -22,7 +22,7 @@ public class StartTest {
 
     @Test
     public void test() {
-        wd.findElement(By.tagName("a"));
+        wd.findElement(By.tagName("a"));//tagName[AttributeName='AttributeValue']//tagName.nameClassElement
         wd.findElement(By.cssSelector("a"));//tagName
         wd.findElement(By.id("root"));
         wd.findElement(By.cssSelector("#root"));//id
